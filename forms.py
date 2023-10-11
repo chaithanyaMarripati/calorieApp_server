@@ -39,6 +39,9 @@ class LoginForm(FlaskForm):
 class CalorieForm(FlaskForm):
     app = App()
     mongo = app.mongo
+    clientMongo = app.mongoClient
+    print(list(clientMongo.list_databases()))
+
     print(mongo.db.command('ping'))
     print(mongo.db, "mongoo db session")
     cursor = mongo.db.food.find()
@@ -49,7 +52,8 @@ class CalorieForm(FlaskForm):
     result = []
     temp = ""
     for i in get_docs:
-        temp = i['food'] + ' (' + i['calories'] + ')'
+        print(i)
+        temp = i['Food'] + ' (' + i['Calories'] + ')'
         result.append((temp, temp))
 
     food = SelectField(

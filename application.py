@@ -14,7 +14,7 @@ from forms import HistoryForm, RegistrationForm, LoginForm, CalorieForm, UserPro
 
 app = Flask(__name__)
 app.secret_key = 'secret'
-app.config['MONGO_URI'] = 'mongodb://127.0.0.1:27017/test'
+app.config['MONGO_URI'] = 'mongodb+srv://bsuryad:7aQKwjmb6DwcXmWM@se18fall2023.fjqyxoi.mongodb.net/'
 app.config['MONGO_CONNECT'] = False
 mongo = PyMongo(app)
 
@@ -123,17 +123,19 @@ def calories():
     """
     now = datetime.now()
     now = now.strftime('%Y-%m-%d')
-
+    form = CalorieForm()
     get_session = session.get('email')
     if get_session is not None:
-        form = CalorieForm()
+        
         if form.validate_on_submit():
             print(form,"this is the form")
             print(request,"this is the request ")
             if request.method == 'POST':
                 email = session.get('email')
                 food = request.form.get('food')
+                print(food)
                 cals = food.split(" ")
+                print(cals)
                 cals = int(cals[1][1:len(cals[1]) - 1])
                 burn = request.form.get('burnout')
 
@@ -172,12 +174,13 @@ def user_profile():
                 target_weight = request.form.get('target_weight')
                 temp = mongo.db.profile.find_one({'email': email}, {
                     'height', 'weight', 'goal', 'target_weight'})
+                print(temp)
                 if temp is not None:
                     mongo.db.profile.update_one({'email': email},
                                             {'$set': {'weight': temp['weight'],
                                                       'height': temp['height'],
                                                       'goal': temp['goal'],
-                                                      'target_weight': temp['target_weight']}})
+                                                      'target_weight': temp['target_weight']}},upsert=True)
                 else:
                     mongo.db.profile.insert_one({'email': email,
                                              'height': height,
