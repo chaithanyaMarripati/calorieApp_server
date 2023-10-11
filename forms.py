@@ -5,7 +5,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, BooleanField
 from wtforms.fields.core import DateField, SelectField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
-from apps import App
+from apps import App,Mongo
 
 
 class RegistrationForm(FlaskForm):
@@ -20,10 +20,9 @@ class RegistrationForm(FlaskForm):
     submit = SubmitField('Sign Up')
 
     def validate_email(self, email):
-        app_object = App()
-        mongo = app_object.mongo
-
-        temp = mongo.db.user.find_one({'email': email.data}, {'email', 'pwd'})
+        mongo = Mongo().mongoClient
+         
+        temp = mongo.user.find_one({'email': email.data}, {'email', 'pwd'})
         if temp:
             raise ValidationError('Email already exists!')
 
@@ -38,13 +37,12 @@ class LoginForm(FlaskForm):
 
 class CalorieForm(FlaskForm):
     app = App()
-    mongo = app.mongo
-    clientMongo = app.mongoClient
-    print(list(clientMongo.list_databases()))
+      
+    mongo = Mongo().mongoClient
+    
 
-    print(mongo.db.command('ping'))
-    print(mongo.db, "mongoo db session")
-    cursor = mongo.db.food.find()
+    print(mongo.command('ping'))
+    cursor = mongo.food.find()
     get_docs = []
     for record in cursor:
         get_docs.append(record)
@@ -85,14 +83,12 @@ class UserProfileForm(FlaskForm):
 
 class HistoryForm(FlaskForm):
     app = App()
-    mongo = app.mongo
     date = DateField()
     submit = SubmitField('Fetch')
 
 
 class EnrollForm(FlaskForm):
     app = App()
-    mongo = app.mongo
     submit = SubmitField('Enroll')
 
 class ResetPasswordForm(FlaskForm):

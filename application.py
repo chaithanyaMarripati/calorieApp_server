@@ -11,12 +11,13 @@ from flask_mail import Mail
 from flask_pymongo import PyMongo
 from tabulate import tabulate
 from forms import HistoryForm, RegistrationForm, LoginForm, CalorieForm, UserProfileForm, EnrollForm
+from apps import Mongo
+
 
 app = Flask(__name__)
 app.secret_key = 'secret'
-app.config['MONGO_URI'] = 'mongodb+srv://bsuryad:7aQKwjmb6DwcXmWM@se18fall2023.fjqyxoi.mongodb.net/'
-app.config['MONGO_CONNECT'] = False
-mongo = PyMongo(app)
+# mongo contains test database details
+mongo = Mongo().mongoClient
 
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
@@ -53,7 +54,7 @@ def login():
     if not session.get('email'):
         form = LoginForm()
         if form.validate_on_submit():
-            temp = mongo.db.user.find_one({'email': form.email.data}, {
+            temp = mongo.user.find_one({'email': form.email.data}, {
                 'email', 'pwd'})
             print("temp value is here", temp)
             if temp is not None and temp['email'] == form.email.data and (
@@ -103,7 +104,7 @@ def register():
                 username = request.form.get('username')
                 email = request.form.get('email')
                 password = request.form.get('password')
-                mongo.db.user.insert_one({'name': username, 'email': email, 'pwd': bcrypt.hashpw(
+                mongo.user.insert_one({'name': username, 'email': email, 'pwd': bcrypt.hashpw(
                     password.encode("utf-8"), bcrypt.gensalt())})
             flash(f'Account created for {form.username.data}!', 'success')
             return redirect(url_for('home'))
@@ -139,13 +140,13 @@ def calories():
                 cals = int(cals[1][1:len(cals[1]) - 1])
                 burn = request.form.get('burnout')
 
-                temp = mongo.db.calories.find_one({'email': email}, {
+                temp = mongo.calories.find_one({'email': email}, {
                     'email', 'calories', 'burnout'})
                 if temp is not None:
-                    mongo.db.calories.update({'email': email}, {'$set': {
+                    mongo.calories.update({'email': email}, {'$set': {
                                              'calories': temp['calories'] + cals, 'burnout': temp['burnout'] + int(burn)}})
                 else:
-                    mongo.db.calories.insert(
+                    mongo.calories.insert(
                         {'date': now, 'email': email, 'calories': cals, 'burnout': int(burn)})
                 flash(f'Successfully updated the data', 'success')
                 return redirect(url_for('calories'))
@@ -172,17 +173,17 @@ def user_profile():
                 height = request.form.get('height')
                 goal = request.form.get('goal')
                 target_weight = request.form.get('target_weight')
-                temp = mongo.db.profile.find_one({'email': email}, {
+                temp = mongo.profile.find_one({'email': email}, {
                     'height', 'weight', 'goal', 'target_weight'})
                 print(temp)
                 if temp is not None:
-                    mongo.db.profile.update_one({'email': email},
+                    mongo.profile.update_one({'email': email},
                                             {'$set': {'weight': temp['weight'],
                                                       'height': temp['height'],
                                                       'goal': temp['goal'],
                                                       'target_weight': temp['target_weight']}},upsert=True)
                 else:
-                    mongo.db.profile.insert_one({'email': email,
+                    mongo.profile.insert_one({'email': email,
                                              'height': height,
                                              'weight': weight,
                                              'goal': goal,
@@ -224,7 +225,7 @@ def ajaxhistory():
     if get_session is not None:
         if request.method == "POST":
             date = request.form.get('date')
-            res = mongo.db.calories.find_one({'email': email, 'date': date}, {
+            res = mongo.calories.find_one({'email': email, 'date': date}, {
                                              'date', 'email', 'calories', 'burnout'})
             if res:
                 return json.dumps({'date': res['date'], 'email': res['email'], 'burnout': res['burnout'], 'calories': res['calories']}), 200, {
@@ -246,7 +247,7 @@ def friends():
     # ##########################
     email = session.get('email')
 
-    myFriends = list(mongo.db.friends.find(
+    myFriends = list(mongo.friends.find(
         {'sender': email, 'accept': True}, {'sender', 'receiver', 'accept'}))
     myFriendsList = list()
 
@@ -254,16 +255,16 @@ def friends():
         myFriendsList.append(f['receiver'])
 
     print(myFriends)
-    allUsers = list(mongo.db.user.find({}, {'name', 'email'}))
+    allUsers = list(mongo.user.find({}, {'name', 'email'}))
 
-    pendingRequests = list(mongo.db.friends.find(
+    pendingRequests = list(mongo.friends.find(
         {'sender': email, 'accept': False}, {'sender', 'receiver', 'accept'}))
     pendingReceivers = list()
     for p in pendingRequests:
         pendingReceivers.append(p['receiver'])
 
     pendingApproves = list()
-    pendingApprovals = list(mongo.db.friends.find(
+    pendingApprovals = list(mongo.friends.find(
         {'receiver': email, 'accept': False}, {'sender', 'receiver', 'accept'}))
     for p in pendingApprovals:
         pendingApproves.append(p['sender'])
@@ -284,7 +285,7 @@ def send_email():
     # Output: Calorie History Received on specified email
     # ##########################
     email = session.get('email')
-    data = list(mongo.db.calories.find({'email': email}, {'date','email','calories','burnout'}))
+    data = list(mongo.calories.find({'email': email}, {'date','email','calories','burnout'}))
     table = [['Date','Email ID','Calories','Burnout']]
     for a in data:
         tmp = [a['date'],a['email'],a['calories'],a['burnout']] 
@@ -306,23 +307,23 @@ def send_email():
         
     server.quit()
     
-    myFriends = list(mongo.db.friends.find(
+    myFriends = list(mongo.friends.find(
         {'sender': email, 'accept': True}, {'sender', 'receiver', 'accept'}))
     myFriendsList = list()
     
     for f in myFriends:
         myFriendsList.append(f['receiver'])
 
-    allUsers = list(mongo.db.user.find({}, {'name', 'email'}))
+    allUsers = list(mongo.user.find({}, {'name', 'email'}))
     
-    pendingRequests = list(mongo.db.friends.find(
+    pendingRequests = list(mongo.friends.find(
         {'sender': email, 'accept': False}, {'sender', 'receiver', 'accept'}))
     pendingReceivers = list()
     for p in pendingRequests:
         pendingReceivers.append(p['receiver'])
 
     pendingApproves = list()
-    pendingApprovals = list(mongo.db.friends.find(
+    pendingApprovals = list(mongo.friends.find(
         {'receiver': email, 'accept': False}, {'sender', 'receiver', 'accept'}))
     for p in pendingApprovals:
         pendingApproves.append(p['sender'])
@@ -344,7 +345,7 @@ def ajaxsendrequest():
     email = get_session = session.get('email')
     if get_session is not None:
         receiver = request.form.get('receiver')
-        res = mongo.db.friends.insert_one(
+        res = mongo.friends.insert_one(
             {'sender': email, 'receiver': receiver, 'accept': False})
         if res:
             return json.dumps({'status': True}), 200, {
@@ -365,7 +366,7 @@ def ajaxcancelrequest():
     email = get_session = session.get('email')
     if get_session is not None:
         receiver = request.form.get('receiver')
-        res = mongo.db.friends.delete_one(
+        res = mongo.friends.delete_one(
             {'sender': email, 'receiver': receiver})
         if res:
             return json.dumps({'status': True}), 200, {
@@ -387,9 +388,9 @@ def ajaxapproverequest():
     if get_session is not None:
         receiver = request.form.get('receiver')
         print(email, receiver)
-        res = mongo.db.friends.update_one({'sender': receiver, 'receiver': email}, {
+        res = mongo.friends.update_one({'sender': receiver, 'receiver': email}, {
                                           "$set": {'sender': receiver, 'receiver': email, 'accept': True}})
-        mongo.db.friends.insert_one(
+        mongo.friends.insert_one(
             {'sender': email, 'receiver': receiver, 'accept': True})
         if res:
             return json.dumps({'status': True}), 200, {
@@ -424,7 +425,7 @@ def yoga():
         if form.validate_on_submit():
             if request.method == 'POST':
                 enroll = "yoga"
-                mongo.db.user.insert({'Email': email, 'Status': enroll})
+                mongo.user.insert({'Email': email, 'Status': enroll})
             flash(
                 f' You have succesfully enrolled in our {enroll} plan!',
                 'success')
@@ -450,7 +451,7 @@ def swim():
         if form.validate_on_submit():
             if request.method == 'POST':
                 enroll = "swimming"
-                mongo.db.user.insert({'Email': email, 'Status': enroll})
+                mongo.user.insert({'Email': email, 'Status': enroll})
             flash(
                 f' You have succesfully enrolled in our {enroll} plan!',
                 'success')
@@ -476,7 +477,7 @@ def abbs():
         if form.validate_on_submit():
             if request.method == 'POST':
                 enroll = "abbs"
-                mongo.db.user.insert({'Email': email, 'Status': enroll})
+                mongo.user.insert({'Email': email, 'Status': enroll})
             flash(
                 f' You have succesfully enrolled in our {enroll} plan!',
                 'success')
@@ -501,7 +502,7 @@ def belly():
         if form.validate_on_submit():
             if request.method == 'POST':
                 enroll = "belly"
-                mongo.db.user.insert({'Email': email, 'Status': enroll})
+                mongo.user.insert({'Email': email, 'Status': enroll})
             flash(
                 f' You have succesfully enrolled in our {enroll} plan!',
                 'success')
@@ -527,7 +528,7 @@ def core():
         if form.validate_on_submit():
             if request.method == 'POST':
                 enroll = "core"
-                mongo.db.user.insert({'Email': email, 'Status': enroll})
+                mongo.user.insert({'Email': email, 'Status': enroll})
             flash(
                 f' You have succesfully enrolled in our {enroll} plan!',
                 'success')
@@ -552,7 +553,7 @@ def gym():
         if form.validate_on_submit():
             if request.method == 'POST':
                 enroll = "gym"
-                mongo.db.user.insert({'Email': email, 'Status': enroll})
+                mongo.user.insert({'Email': email, 'Status': enroll})
             flash(
                 f' You have succesfully enrolled in our {enroll} plan!',
                 'success')
@@ -577,7 +578,7 @@ def walk():
         if form.validate_on_submit():
             if request.method == 'POST':
                 enroll = "walk"
-                mongo.db.user.insert({'Email': email, 'Status': enroll})
+                mongo.user.insert({'Email': email, 'Status': enroll})
             flash(
                 f' You have succesfully enrolled in our {enroll} plan!',
                 'success')
@@ -602,7 +603,7 @@ def dance():
         if form.validate_on_submit():
             if request.method == 'POST':
                 enroll = "dance"
-                mongo.db.user.insert({'Email': email, 'Status': enroll})
+                mongo.user.insert({'Email': email, 'Status': enroll})
             flash(
                 f' You have succesfully enrolled in our {enroll} plan!',
                 'success')
@@ -627,7 +628,7 @@ def hrx():
         if form.validate_on_submit():
             if request.method == 'POST':
                 enroll = "hrx"
-                mongo.db.user.insert({'Email': email, 'Status': enroll})
+                mongo.user.insert({'Email': email, 'Status': enroll})
             flash(
                 f' You have succesfully enrolled in our {enroll} plan!',
                 'success')

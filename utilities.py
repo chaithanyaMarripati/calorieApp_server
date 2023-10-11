@@ -1,14 +1,13 @@
 import random
 
 from flask_mail import Message
-from apps import App
+from apps import App,Mongo
 import string
 
 
 class Utilities:
     app = App()
     mail = app.mail
-    mongo = app.mongo
 
     def send_email(self, email):
         msg = Message()
@@ -17,7 +16,8 @@ class Utilities:
         msg.recipients = [email]
         random = str(self.get_random_string(8))
         msg.body = 'Please use the following password to login to your account: ' + random
-        self.mongo.db.ath.update({'email': email}, {'$set': {'temp': random}})
+        mongo = Mongo().mongoClient
+        mongo.ath.update({'email': email}, {'$set': {'temp': random}})
         if self.mail.send(msg):
             return "success"
         else:
