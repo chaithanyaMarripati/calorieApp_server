@@ -1,27 +1,34 @@
 {% extends "layout.html" %}
 {% block content %}
-    <div class="content-section">
-        <form method="POST" onSubmit="storeCalories()" name='calorieform'>
-            {{ form.hidden_tag() }}
-            <fieldset class="form-group">
-                <legend class="border-bottom mb-4">Today's Calories</legend>
-                <div class="form-group">
-                    <label class="form-control-label">Date</label>
-                        <p class="form-control form-control-lg" name='time'>{{ time }}</p>
-                </div>
-               
-                <div class="form-group">
-                    {{ form.food.label(class="form-control-label") }}
-                    {{ form.food(class="form-control form-control-lg") }}
-                </div>
-                <div class="form-group">
-                    {{ form.burnout.label(class="form-control-label") }}
-                    {{ form.burnout(class="form-control form-control-lg") }}
-                </div>
-            </fieldset>
+<div class="content-section">
+    <form method="POST" onSubmit="storeCalories()" name='calorieform'>
+        <!-- Include hidden fields for form data -->
+        {{ form.hidden_tag() }}
+
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Today's Calories</legend>
+            
             <div class="form-group">
-                {{ form.submit(class="btn btn-outline-info") }}
+                <label class="form-control-label">Date</label>
+                <!-- Input field for date, required -->
+                <input type="date" name="date" required>
             </div>
-        </form>
-    </div>
+
+            <div class="form-group">
+                {{ form.food.label(class="form-control-label") }}
+                {{ form.food(class="form-control form-control-lg") }}
+            </div>
+
+            <div class="form-group">
+                {{ form.burnout.label(class="form-control-label") }}
+                {{ form.burnout(class="form-control form-control-lg") }}
+            </div>
+        </fieldset>
+
+        <div class="form-group">
+            <!-- Submit button for the form -->
+            {{ form.submit(class="btn btn-outline-info") }}
+        </div>
+    </form>
+</div>
 {% endblock content %}

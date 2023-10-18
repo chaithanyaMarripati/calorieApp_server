@@ -133,26 +133,28 @@ def calories():
             print(request,"this is the request ")
             if request.method == 'POST':
                 email = session.get('email')
+                date = request.form.get('date')
                 food = request.form.get('food')
-                print(food)
+                # print(food)
                 cals = food.split(" ")
-                print(cals)
-                cals = int(cals[1][1:len(cals[1]) - 1])
+                # print(cals)
+                # flash(cals)
+                # print(cals[-1][1:-1:],type(cals[1]))
+                cals = int(cals[-1][1:-1:])
                 burn = request.form.get('burnout')
 
-                temp = mongo.calories.find_one({'email': email}, {
-                    'email', 'calories', 'burnout'})
-                if temp is not None:
-                    mongo.calories.update({'email': email}, {'$set': {
-                                             'calories': temp['calories'] + cals, 'burnout': temp['burnout'] + int(burn)}})
-                else:
-                    mongo.calories.insert(
-                        {'date': now, 'email': email, 'calories': cals, 'burnout': int(burn)})
+                # temp = mongo.calories.find_one({'email': email}, {
+                #     'email', 'calories', 'burnout'})
+                # if temp is not None:
+                #     mongo.calories.update({'email': email}, {'$set': {
+                #                              'calories': temp['calories'] + cals, 'burnout': temp['burnout'] + int(burn)}})
+                # else:
+                mongo.calories.insert( {'date': date, 'email': email, 'calories': cals, 'burnout': int(burn)})
                 flash(f'Successfully updated the data', 'success')
                 return redirect(url_for('calories'))
     else:
         return redirect(url_for('home'))
-    return render_template('calories.html', form=form, time=now)
+    return render_template('calories.html', title = 'Calories', form=form, time=now)
 
 
 @app.route("/user_profile", methods=['GET', 'POST'])
