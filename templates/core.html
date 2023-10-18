@@ -1,20 +1,45 @@
 {% extends "layout.html" %}
 {% block content %}
     <div>
-        <h1 id="head"><strong><span style="text-decoration: underline;"> Core Conditioning </span></strong></h1><img class="img-fluid" src="../static/img/core.jpeg">
-        <p id="1"><br> Develop a strong core for more than the six-pack abs that will hopefully peak through. Use core conditioning to improve your overall athletic performance and life—the flat abs are just a bonus. <br><br><strong>Main Practice:</strong><br><br>1. Plank<br>2. Reverse Crunch <br>3. Bird Dog Crunch <br>4. Glute Bridge <br>5. Russian Twist <br>6. Towel Plank knee-inn<br>7. Bicycle crunch <br><br><br></p>
+        <!-- Title and Image -->
+        <h1 id="head"><strong><span style="text-decoration: underline;"> Core Conditioning </span></strong></h1>
+        <img class="img-fluid" src="../static/img/core.jpeg">
+        
+        <!-- Workout Description -->
+        <p id="1">
+            <br> Develop a strong core for more than the six-pack abs that will hopefully peak through. Use core conditioning to improve your overall athletic performance and life—the flat abs are just a bonus.
+            <br><br><strong>Main Practice:</strong>
+            <br><br>
+            1. Plank
+            <br>2. Reverse Crunch
+            <br>3. Bird Dog Crunch
+            <br>4. Glute Bridge
+            <br>5. Russian Twist
+            <br>6. Towel Plank knee-inn
+            <br>7. Bicycle crunch
+            <br>
+        </p>
     </div>
+
+    <!-- Enroll in Core Conditioning Plan -->
     <div class="card">
-        <div class="card-body">
+        <div class="card-body" align="center">
+            <!-- Plan Title and Image -->
             <h4 class="card-title">Enroll in our Core Conditioning Plan</h4>
             <img class="img-fluid" src="../static/img/core.jpeg">
         </div>
-        <form method="POST" action="">
+
+        <!-- Enrollment Form -->
+        <form align="center" method="POST" action="">
             {{ form.hidden_tag() }}
-                <div class="form-group">
-                    {{ form.submit(class="btn btn-outline-info") }}
-                </div>
+            <div class="form-group">
+                <!-- Form Submission Button -->
+                {{ form.submit(class="btn btn-outline-info") }}
+            </div>
         </form>
     </div>
+    <br>
+
+    <!-- Include Bootstrap JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
 {% endblock content %}

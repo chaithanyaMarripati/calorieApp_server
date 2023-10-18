@@ -1,22 +1,39 @@
 {% extends "layout.html" %}
+
 {% block content %}
     <div>
-        <h1 id="head"><strong><span style="text-decoration: underline;">Dance Fitness</span></strong></h1><img class="img-fluid" src="../static/img/R22.jpg">
-        <p id="1"><br><strong><b>Simply put, dance cardio is utilizing different types of dance to exercise your body.</b></strong> <br>Build new muscle mass and strip away belly fat fast to reveal a lean, hard physique in 28 days
-            <br> There are many types of dance cardio programs to choose from, so you can change your routine as often as you want to.
-        <br><br><strong><b>1. Zumba Dancing</b></strong><br><strong><b>2. Bollywood dancing</b></strong><br><strong><b>3. Hula Hoop Dancing</b></strong><br><strong><b>4. Salsa</b></strong><br><br><br><br></p>
+        <h1 id="head"><strong><span style="text-decoration: underline;">Dance Fitness</span></strong></h1>
+        <img class="img-fluid" src="../static/img/R22.jpg">
+        <p id="1">
+            <br>
+            <strong><b>Simply put, dance cardio is utilizing different types of dance to exercise your body.</b></strong>
+            <br>
+            Build new muscle mass and strip away belly fat fast to reveal a lean, hard physique in 28 days.
+            There are many types of dance cardio programs to choose from, so you can change your routine as often as you want to.
+            <br>
+            <br>
+            <strong><b>1. Zumba Dancing</b></strong>
+            <br>
+            <strong><b>2. Bollywood dancing</b></strong>
+            <br>
+            <strong><b>3. Hula Hoop Dancing</b></strong>
+            <br>
+            <strong><b>4. Salsa</b></strong>
+            <br>
+        </p>
     </div>
     <div class="card">
-        <div class="card-body">
+        <div class="card-body" align="center">
             <h4 class="card-title">Enroll in our Dance Plan</h4>
             <img class="img-fluid" src="../static/img/R22.jpg">
         </div>
-        <form method="POST" action="">
+        <form align="center" method="POST" action="">
             {{ form.hidden_tag() }}
-                <div class="form-group">
-                    {{ form.submit(class="btn btn-outline-info") }}
-                </div>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-outline-info") }}
+            </div>
         </form>
     </div>
+    <br>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
 {% endblock content %}

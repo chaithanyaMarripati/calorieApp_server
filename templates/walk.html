@@ -1,25 +1,40 @@
 {% extends "layout.html" %}
+
 {% block content %}
     <div>
-        <h1 id="head"><strong><span style="text-decoration: underline;">Walk Fitness</span></strong></h1><img class="img-fluid" src="../static/img/walk.jpg">
-        <p id="1"><br><strong><b>Walking can be as good as a workout, if not better, than running</b></strong> <br>walking is a really good form of exercise and can help you reach your fitness and weight-loss goals.
-            <br>Explore your environment on foot. Notice what is going on around you and you'll find you never really walk the same way twice. There are always new things to see.
-        <br><br>Find pleasant places to walk. Look for walking paths, greenways, and pedestrian streets to enjoy.
-        <br>Bring along your family and friends. Walking together is a great way to connect with others.
-        <br>Walk instead of drive for a few trips each week. Walk part of your commute to work or school. Leave the car behind or get off a stop early on public transit. Walk to the store for small items. You'll save money and have a purpose for getting in your daily steps.
-        <br>Try a charity walk to raise money for a cause. Put your steps to good use.<br><br><br><br></p>
+        <!-- Header Section -->
+        <h1 id="head"><strong><span style="text-decoration: underline;">Walk Fitness</span></strong></h1>
+        <img class="img-fluid" src="../static/img/walk.jpg">
+        <p id="1">
+            <br>
+            <strong><b>Walking can be as good as a workout, if not better, than running</b></strong>
+            <br>
+            <!-- Description of Walking Benefits -->
+            Walking is a really good form of exercise and can help you reach your fitness and weight-loss goals.
+            Explore your environment on foot. Notice what is going on around you and you'll find you never really walk the same way twice. There are always new things to see.
+            Find pleasant places to walk. Look for walking paths, greenways, and pedestrian streets to enjoy.
+            Bring along your family and friends. Walking together is a great way to connect with others.
+            Walk instead of drive for a few trips each week. Walk part of your commute to work or school. Leave the car behind or get off a stop early on public transit. Walk to the store for small items. You'll save money and have a purpose for getting in your daily steps.
+            Try a charity walk to raise money for a cause. Put your steps to good use.
+            <!-- End of Description -->
+        </p>
     </div>
+
     <div class="card">
-        <div class="card-body">
+        <div class="card-body" align="center">
+            <!-- Card Title and Image -->
             <h4 class="card-title">Enroll in our 4 Week Walk Plan</h4>
             <img class="img-fluid" src="../static/img/walk_group.jpeg">
         </div>
-        <form method="POST" action="">
+
+        <form align="center" method="POST" action="">
             {{ form.hidden_tag() }}
-                <div class="form-group">
-                    {{ form.submit(class="btn btn-outline-info") }}
-                </div>
+            <div class="form-group">
+                <!-- Form for Enrolling in Walk Plan -->
+                {{ form.submit(class="btn btn-outline-info") }}
+            </div>
         </form>
     </div>
+    <br>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
 {% endblock content %}

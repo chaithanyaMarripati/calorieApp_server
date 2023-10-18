@@ -1,20 +1,35 @@
 {% extends "layout.html" %}
 {% block content %}
+    <!-- Header -->
     <div>
-        <h1 id="head"><strong><span style="text-decoration: underline;">Bye Bye Belly Pooch! </span></strong></h1><img class="img-fluid" src="../static/img/belly.jpeg">
-        <p id="1"><br> Who doesn't want to be able to slip into a pair of jeans without having to deal with a muffin top? Losing belly fat is a surefire way to improve your health. Join us for some great core-focused exercises that will torch fat all over the body, resulting in a strong and more chiseled core. <br><br><strong>Main Practice:</strong><br><br>1. Mountain Climbers<br>2. Burpees <br>3. Turkish Get-up <br>4. Medicine Ball Burpees <br>5. Sprawls <br>6. Side to Side Slams<br>7. Russian Twists <br><br><br></p>
+        <h1 id="head"><strong><span style="text-decoration: underline;">Bye Bye Belly Pooch!</span></strong></h1>
+        <img class="img-fluid" src="../static/img/belly.jpeg">
+        <p id="1"><br> Who doesn't want to be able to slip into a pair of jeans without having to deal with a muffin top? Losing belly fat is a surefire way to improve your health. Join us for some great core-focused exercises that will torch fat all over the body, resulting in a strong and more chiseled core.<br><br><strong>Main Practice:</strong><br><br>
+        1. Mountain Climbers<br>
+        2. Burpees<br>
+        3. Turkish Get-up<br>
+        4. Medicine Ball Burpees<br>
+        5. Sprawls<br>
+        6. Side to Side Slams<br>
+        7. Russian Twists<br>
+        </p>
     </div>
+
+    <!-- Enrollment Card -->
     <div class="card">
-        <div class="card-body">
+        <div class="card-body" align="center">
             <h4 class="card-title">Enroll in our Belly Burner Plan</h4>
             <img class="img-fluid" src="../static/img/belly.jpeg">
         </div>
-        <form method="POST" action="">
+        <!-- Enrollment Form -->
+        <form align="center" method="POST" action="">
             {{ form.hidden_tag() }}
-                <div class="form-group">
-                    {{ form.submit(class="btn btn-outline-info") }}
-                </div>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-outline-info") }}
+            </div>
         </form>
     </div>
+    <br>
+    <!-- Include Bootstrap JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
 {% endblock content %}

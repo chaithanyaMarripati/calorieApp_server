@@ -1,14 +1,23 @@
 {% extends "layout.html" %}
+
 {% block content %}
+<!-- This block extends the "layout.html" template and defines the content for the new_dashboard page. -->
 
 <div id="dashboard-data card">
-    <h5 class="card-header">Your Activities</h5>
-    <div class="card-body">
-        <p class="border-bottom mb-4 h6" id="enroll_legend"></p>
-        <p class="card-text" id="enroll"></p> <br>
-        <p class="border-bottom mb-4 h6" id="calories_legend"></p>
+    <!-- This div contains dashboard data. -->
+    <h5>You have Enrolled in these Workouts</h5>
+    <!-- Display a heading indicating that the user has enrolled in workouts. -->
+    <div>
+        <!-- This div contains a list of enrolled workouts. -->
+        <ul>
+            <!-- This unordered list will display the enrolled workout statuses. -->
+            {% for d in data %}
+                <!-- Iterate through the 'data' list to display workout statuses. -->
+                <li>{{ d['Status'] }}</li>
+                <!-- Display the status of each enrolled workout. -->
+            {% endfor %}
+        </ul>
     </div>
 </div>
-
 
 {% endblock %}

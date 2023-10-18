@@ -1,20 +1,39 @@
 {% extends "layout.html" %}
 {% block content %}
+    <!-- Title and workout image -->
     <div>
-        <h1 id="head"><strong><span style="text-decoration: underline;">Abs Smash!!! </span></strong></h1><img class="img-fluid" src="../static/img/R31.jpg">
-        <p id="1"><br>Bolt on these targeted abs workouts to your main session to sculpt a rock-hard six-pack. If you’re looking to train your abs, the good news is that there are a huge variety of exercises that will help you achieve that goal. <br><br><strong>Main Practice:</strong><br><br>1. Plank<br>2. Single-leg Romanian deadlift <br>3. Squats<br>4. Overhead presses <br>5. Deadlifts <br>6. Push ups<br>7. Pull ups <br><br><br></p>
+        <h1 id="head"><strong><span style="text-decoration: underline;">Abs Smash!!! </span></strong></h1>
+        <img class="img-fluid" src="../static/img/R31.jpg">
+        <!-- Workout description -->
+        <p id="1">
+            <br>Bolt on these targeted abs workouts to your main session to sculpt a rock-hard six-pack. If you’re looking to train your abs, the good news is that there are a huge variety of exercises that will help you achieve that goal.
+            <br><br><strong>Main Practice:</strong>
+            <br><br>
+            1. Plank
+            <br>2. Single-leg Romanian deadlift
+            <br>3. Squats
+            <br>4. Overhead presses
+            <br>5. Deadlifts
+            <br>6. Push ups
+            <br>7. Pull ups
+        </p>
     </div>
+    <!-- Call to action card with enrollment form -->
     <div class="card">
-        <div class="card-body">
+        <div class="card-body" align="center">
             <h4 class="card-title">Enroll in our Abs Smash Plan</h4>
             <img class="img-fluid" src="../static/img/abbs.jpeg">
         </div>
-        <form method="POST" action="">
+        <form align="center" method="POST" action="">
+            <!-- Hidden form fields -->
             {{ form.hidden_tag() }}
-                <div class="form-group">
-                    {{ form.submit(class="btn btn-outline-info") }}
-                </div>
+            <div class="form-group">
+                <!-- Submit button for enrollment -->
+                {{ form.submit(class="btn btn-outline-info") }}
+            </div>
         </form>
     </div>
+    <br>
+    <!-- Include Bootstrap JavaScript library for additional functionality -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
 {% endblock content %}
