@@ -100,24 +100,29 @@ Link to the implementation video of the BurnOut application:
 # Core Functionalities of the Application
  
  ## Register
- 
-<img src=https://github.com/deekay2310/calorieApp_server/blob/main/static/img/Screen%20Shot%202021-12-04%20at%206.41.18%20PM.png>
+ ![Register](https://github.com/chaithanyaMarripati/calorieApp_server/assets/143281993/ce03b1f6-6f59-43c4-9475-77641d3e074a)
 
  ## Login
+ ![Login](https://github.com/chaithanyaMarripati/calorieApp_server/assets/143281993/87ce463c-faae-433b-a90d-e5e8868e2968)
 
-<img src=https://github.com/deekay2310/calorieApp_server/blob/main/static/img/Screen%20Shot%202021-12-04%20at%206.30.27%20PM.png>
+ ## Dashboard
+ ![Dashboard](https://github.com/chaithanyaMarripati/calorieApp_server/assets/143281993/a579fac0-51ce-4e69-b0c4-3366ba200469)
+
+
+
 
  ## Set User Profile
- 
-<img src=https://github.com/deekay2310/calorieApp_server/blob/main/static/img/Screen%20Shot%202021-12-04%20at%206.35.05%20PM.png>
+ ![Set user profile](https://github.com/chaithanyaMarripati/calorieApp_server/assets/143281993/dbbcfd5e-af47-4cb2-8ee1-cc073d326e5b)
+
+
 
 
  ## Enter Calories in and burnt
-<img src=https://github.com/deekay2310/calorieApp_server/blob/main/static/img/calories.png>
+![Enter calories in and burnt](https://github.com/chaithanyaMarripati/calorieApp_server/assets/143281993/1f2151ab-e246-4028-a430-e8c868b404ab)
 
  ## Chatbot
+![Chatbot](https://github.com/chaithanyaMarripati/calorieApp_server/assets/143281993/aea8179f-b7a1-4977-b409-5635f30d0736)
 
-<img src=https://github.com/deekay2310/calorieApp_server/blob/main/static/img/Screen%20Shot%202021-12-04%20at%206.31.54%20PM.png>
 
 
 
@@ -128,23 +133,28 @@ Link to the implementation video of the BurnOut application:
 
 
  ## Check History
-
-<img src=https://github.com/deekay2310/calorieApp_server/blob/main/static/img/history.png>
-
-
-
-
- ## Add weight alert
+![Check History](https://github.com/chaithanyaMarripati/calorieApp_server/assets/143281993/68705fc3-a2e9-4ac0-a737-4c5ac0a33dc2)
  
-<img src=https://github.com/deekay2310/calorieApp_server/blob/main/static/img/Screen%20Shot%202021-12-04%20at%206.30.48%20PM.png>
 
  ## Adding Friends
+![Adding friends](https://github.com/chaithanyaMarripati/calorieApp_server/assets/143281993/cdeb4bec-9c28-4f6d-b375-f96d273f117d)
 
-<img src=https://github.com/deekay2310/calorieApp_server/blob/main/static/img/friends.png>
 
  ## Enrolling into several programs
- 
-<img src=https://github.com/deekay2310/calorieApp_server/blob/main/static/img/Screen%20Shot%202021-12-04%20at%206.32.08%20PM.png>
+ ![Enrolling](https://github.com/chaithanyaMarripati/calorieApp_server/assets/143281993/c628f536-c0c0-435b-a1b8-dc8343f50bed)
+
+ ## User enrollment list
+ ![User Enrollment list](https://github.com/chaithanyaMarripati/calorieApp_server/assets/143281993/28e276e7-a205-4387-b74a-4a3278ce84dc)
+
+
+ ## Suggestion page
+ ![Suggestion page](https://github.com/chaithanyaMarripati/calorieApp_server/assets/143281993/8d16eab9-2911-4a1d-a99f-50fb3d5a3a1e)
+
+ ## More info page
+ ![More info page on Yoga](https://github.com/chaithanyaMarripati/calorieApp_server/assets/143281993/882645fd-babf-4962-9af6-ed11e14ae74f)
+
+
+
 
 
  # Steps for execution
