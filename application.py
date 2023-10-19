@@ -826,8 +826,4 @@ def workout_suggestions():
     return render_template('suggestion.html', title='Suggestion',status=True, data = suggestions)
 
 if __name__ == '__main__':
-<<<<<<< HEAD
     app.run(debug=True, host="0.0.0.0",port=3000)
-=======
-    app.run(debug=True,port=4999)
->>>>>>> main
