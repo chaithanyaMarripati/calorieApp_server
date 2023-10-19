@@ -6,6 +6,7 @@ from wtforms import StringField, PasswordField, SubmitField, BooleanField
 from wtforms.fields.core import DateField, SelectField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
 from apps import App,Mongo
+import re
 
 
 class RegistrationForm(FlaskForm):
@@ -25,6 +26,12 @@ class RegistrationForm(FlaskForm):
         temp = mongo.user.find_one({'email': email.data}, {'email', 'pwd'})
         if temp:
             raise ValidationError('Email already exists!')
+    def validate_password(self, password):
+        password_value = password.data
+
+        if len(password_value) < 8 or not re.search(r'[A-Z]', password_value) or not re.search(r'[a-z]', password_value) or not re.search(r'\d', password_value) or not re.search(r'[!@#$%^&*]', password_value):
+            password.data = None
+            raise ValidationError('Password must be least 8 characters long and must contain at least 1 uppercase, lowercase, digit and special character.')
 
 
 class LoginForm(FlaskForm):
