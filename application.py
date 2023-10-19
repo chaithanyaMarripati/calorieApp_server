@@ -55,7 +55,7 @@ def login():
         form = LoginForm()
         if form.validate_on_submit():
             temp = mongo.user.find_one({'email': form.email.data}, {
-                'email', 'pwd'})
+                'email', 'pwd','name'})
             print("temp value is here", temp)
             if temp is not None and temp['email'] == form.email.data and (
                 bcrypt.checkpw(
@@ -63,6 +63,7 @@ def login():
                     temp['pwd']) ):
                 flash('You have been logged in!', 'success')
                 session['email'] = temp['email']
+                session['name'] = temp['name']
                 #session['login_type'] = form.type.data
                 return redirect(url_for('dashboard'))
             else:
@@ -662,4 +663,4 @@ def hrx():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True,port=4999)
