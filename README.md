@@ -11,10 +11,10 @@ https://drive.google.com/drive/folders/1M5vdCwH11C-MqK8X-Dkf5bPR0SaWA5Yc?usp=sha
 [![PEP8](https://img.shields.io/badge/code%20style-pep8-orange.svg)](https://www.python.org/dev/peps/pep-0008/)
 ![last commit](https://img.shields.io/github/last-commit/atharva1996/calorieApp_server)
 ![total lines](https://img.shields.io/tokei/lines/github/atharva1996/calorieApp_server)
-![github workflow](https://github.com/deekay2310/calorieApp_server/actions/workflows/unit_test.yml/badge.svg)
-![github workflow](https://github.com/deekay2310/calorieApp_server/actions/workflows/style_checker.yml/badge.svg)
-![github workflow](https://github.com/deekay2310/calorieApp_server/actions/workflows/syntax_checker.yml/badge.svg)
-[![codecov](https://codecov.io/gh/deekay2310/calorieApp_server/branch/main/graph/badge.svg?token=IQW5PLLE22)](https://codecov.io/gh/deekay2310/calorieApp_server)
+![github workflow](https://github.com/chaithanyaMarripati/calorieApp_server/actions/workflows/unit_test.yml/badge.svg)
+![github workflow](https://github.com/chaithanyaMarripati/calorieApp_server/actions/workflows/style_checker.yml/badge.svg)
+![github workflow](https://github.com/chaithanyaMarripati/calorieApp_server/actions/workflows/syntax_checker.yml/badge.svg)
+[![codecov](https://codecov.io/gh/chaithanyaMarripati/calorieApp_server/branch/main/graph/badge.svg?token=IQW5PLLE22)](https://codecov.io/gh/deekay2310/calorieApp_server)
 <!--Badges-->
 <a href="https://github.com/chaithanyaMarripati/calorieApp_server/fork" target="blank">
 <img src="https://img.shields.io/github/forks/chaithanyaMarripati/calorieApp_server?style=flat-square" alt="calorieApp_server forks"/>
