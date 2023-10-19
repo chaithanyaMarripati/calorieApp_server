@@ -16,35 +16,35 @@ https://drive.google.com/drive/folders/1M5vdCwH11C-MqK8X-Dkf5bPR0SaWA5Yc?usp=sha
 ![github workflow](https://github.com/deekay2310/calorieApp_server/actions/workflows/syntax_checker.yml/badge.svg)
 [![codecov](https://codecov.io/gh/deekay2310/calorieApp_server/branch/main/graph/badge.svg?token=IQW5PLLE22)](https://codecov.io/gh/deekay2310/calorieApp_server)
 <!--Badges-->
-<a href="https://github.com/deekay2310/calorieApp_server/fork" target="blank">
-<img src="https://img.shields.io/github/forks/deekay2310/calorieApp_server?style=flat-square" alt="calorieApp_server forks"/>
+<a href="https://github.com/chaithanyaMarripati/calorieApp_server/fork" target="blank">
+<img src="https://img.shields.io/github/forks/chaithanyaMarripati/calorieApp_server?style=flat-square" alt="calorieApp_server forks"/>
 </a>
-<a href="https://github.com/deekay2310/calorieApp_server/stargazers" target="blank">
-<img src="https://img.shields.io/github/stars/deekay2310/calorieApp_server?style=flat-square" alt="calorieApp_server stars"/>
+<a href="https://github.com/chaithanyaMarripati/calorieApp_server/stargazers" target="blank">
+<img src="https://img.shields.io/github/stars/chaithanyaMarripati/calorieApp_server?style=flat-square" alt="calorieApp_server stars"/>
 </a>
-<a href="https://github.com/deekay2310/calorieApp_server/issues" target="blank">
-<img src="https://img.shields.io/github/issues/deekay2310/calorieApp_server?style=flat-square" alt="calorieApp_server issues"/>
+<a href="https://github.com/chaithanyaMarripati/calorieApp_server/issues" target="blank">
+<img src="https://img.shields.io/github/issues/chaithanyaMarripati/calorieApp_server?style=flat-square" alt="calorieApp_server issues"/>
 </a>
-<a href="https://github.com/deekay2310/calorieApp_server/issues" target="blank">
-<img src="https://img.shields.io/github/issues-closed/deekay2310/calorieApp_server" alt="calorieApp_server issues closed"/>
+<a href="https://github.com/chaithanyaMarripati/calorieApp_server/issues" target="blank">
+<img src="https://img.shields.io/github/issues-closed/chaithanyaMarripati/calorieApp_server" alt="calorieApp_server issues closed"/>
 </a>
-<a href="https://github.com/deekay2310/calorieApp_server/pulls" target="blank">
-<img src="https://img.shields.io/github/issues-pr/deekay2310/calorieApp_server?style=flat-square" alt="cheapBuy pull-requests"/>
+<a href="https://github.com/chaithanyaMarripati/calorieApp_server/pulls" target="blank">
+<img src="https://img.shields.io/github/issues-pr/chaithanyaMarripati/calorieApp_server?style=flat-square" alt="cheapBuy pull-requests"/>
 </a>
-<a href="https://github.com/deekay2310/calorieApp_server/graphs/contributors" alt="Contributors">
-<img src="https://img.shields.io/github/contributors/deekay2310/calorieApp_server" /></a>
+<a href="https://github.com/chaithanyaMarripati/calorieApp_server/graphs/contributors" alt="Contributors">
+<img src="https://img.shields.io/github/contributors/chaithanyaMarripati/calorieApp_server" /></a>
 
-<a href="https://github.com/deekay2310/calorieApp_server/milestones" alt="milestones">
-<img src="https://img.shields.io/github/milestones/all/deekay2310/calorieApp_server" /></a> 
+<a href="https://github.com/chaithanyaMarripati/calorieApp_server/milestones" alt="milestones">
+<img src="https://img.shields.io/github/milestones/all/chaithanyaMarripati/calorieApp_server" /></a> 
 
-<a href="https://github.com/deekay2310/calorieApp_server/graphs/commit-activity" alt="commit activity">
-<img src="https://img.shields.io/github/commit-activity/w/deekay2310/calorieApp_server" /></a> 
+<a href="https://github.com/chaithanyaMarripati/calorieApp_server/graphs/commit-activity" alt="commit activity">
+<img src="https://img.shields.io/github/commit-activity/w/chaithanyaMarripati/calorieApp_server" /></a> 
 
-<a href="https://github.com/deekay2310/calorieApp_server/discussions" alt="discussion">
-<img src="https://img.shields.io/github/discussions/deekay2310/calorieApp_server" /></a> 
+<a href="https://github.com/chaithanyaMarripati/calorieApp_server/discussions" alt="discussion">
+<img src="https://img.shields.io/github/discussions/chaithanyaMarripati/calorieApp_server" /></a> 
 
-<a href="https://img.shields.io/github/repo-size/deekay2310/calorieApp_server" alt="repo size">
-<img src="https://img.shields.io/github/repo-size/deekay2310/calorieApp_server" /></a>
+<a href="https://img.shields.io/github/repo-size/chaithanyaMarripati/calorieApp_server" alt="repo size">
+<img src="https://img.shields.io/github/repo-size/chaithanyaMarripati/calorieApp_server" /></a>
 
 
 
