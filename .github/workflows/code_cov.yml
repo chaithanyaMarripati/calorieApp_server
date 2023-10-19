@@ -11,24 +11,24 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-    - name: Install Python 3.9.8
-      uses: actions/setup-python@v1
-      with:
-        python-version: 3.9.9
-    - name: Install dependencies
-      run: |
-        pip install pytest-cov
-        pip install -r requirements.txt
-        echo requirements installed
-    - name: Run the tests
-      run: |
-        python application.py &
-        sleep 5
-        cd tests
-        coverage run test_module.py
-    - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v1
-      with:
-        token: ${{ secrets.CODECOV_TOKEN }}
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Install Python 3.9.18
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.9.18
+      - name: Install dependencies
+        run: |
+          pip install pytest-cov
+          pip install -r requirements.txt
+          echo requirements installed
+      - name: Run the tests
+        run: |
+          python application.py &
+          sleep 5
+          cd tests
+          coverage run test_module.py
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
