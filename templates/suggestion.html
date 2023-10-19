@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <!-- Center-align the content -->
+    <div align="center">
+        <!-- Display the first suggestion -->
+        <strong align="center"><h3>{{ data[0] }}</h3></strong>
+        <!-- Display the second suggestion -->
+        <strong align="center"><h3>{{ data[1] }}</h3></strong>
+        <!-- Display the third suggestion -->
+        <strong align="center"><h3">{{ data[2] }}</h3></strong>
+    </div>
+    <br>
+
+    <!-- Center-align an unordered list for displaying suggestions -->
+    <ul align="center">
+        <!-- Loop through and display suggestions from data[3] to the second-to-last element -->
+        {% for suggestion in data[3:-1] %}
+            <h6><li>{{ suggestion }}</li></h6>
+        {% endfor %}
+    </ul>
+    <br>
+
+    <!-- Display a note at the center of the content -->
+    <strong align="center"><h3>Note: {{ data[-1] }}</h3></strong>
+    <br>
+{% endblock content %}

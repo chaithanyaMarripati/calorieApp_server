@@ -743,6 +743,86 @@ def hrx():
 #                 return json.dumps({'email': "", 'Status': ""}), 200, {
 #                     'ContentType': 'application/json'}
 
+# Define a route for BMI calculation and workout suggestions
+@app.route('/workout_suggestions', methods=['GET','POST'])
+def workout_suggestions():
+    email = session.get('email')
+
+    # Assuming you have already created a MongoClient and connected to the database
+    # client = MongoClient("mongodb://localhost:27017")
+    # db = client["your_database_name"]
+
+    # Define the collection you want to query
+
+    # Query data based on a specific condition
+    result = mongo.profile.find_one({'email': email},{'height', 'weight', 'target_weight'})
+
+    height_m = int(result['height']) / 100.0
+    weight_kg = int(result['weight'])
+    if height_m <= 0:
+        raise ValueError("Height must be a positive value.")
+    
+    if weight_kg <= 0:
+        raise ValueError("Weight must be a positive value.")
+    
+    bmi =  weight_kg / (height_m ** 2)
+    email = session.get('email')
+    suggestions = []
+
+    # Determine the BMI category
+    suggestions.append("Your BMI is "+str(int(bmi))+".")
+    if bmi < 18.5:
+        # Suggest workouts for Underweight category
+        suggestions.append("So, this indiactes you are in the Underweight category.")
+        suggestions.append("To gain weight: Focus on strength training and calorie surplus.")
+        # Include specific workout plans for Underweight
+        
+        # Strength Training
+        suggestions.append("Week 1-8 (3-4 days a week): Strength Training")
+        suggestions.append("Exercise 1: Bench Press - 3 sets of 8-10 reps")
+        suggestions.append("Exercise 2: Deadlift - 3 sets of 6-8 reps")
+        suggestions.append("Exercise 3: Squats - 3 sets of 8-10 reps")
+        suggestions.append("Exercise 4: Pull-Ups - 3 sets of 6-8 reps (if available)")
+        # Suggested diet: Maintain a calorie surplus (e.g., increase calorie intake by 300-500 calories/day).
+
+    elif 18.5 <= bmi < 25.0:
+        # Suggest workouts for Normal weight category
+        suggestions.append("So, this indiactes you are in the Normal weight category.")
+        suggestions.append("To maintain weight: Maintain a balanced workout routine and calorie intake.")
+        # Include specific workout plans for Normal weight
+        
+        # Balanced Workout
+        suggestions.append("Week 1-8 (3-4 days a week): Balanced Workout")
+        suggestions.append("Exercise 1: Squats - 3 sets of 12 reps")
+        suggestions.append("Exercise 2: Push-Ups - 3 sets of 10 reps")
+        suggestions.append("Exercise 3: Planks - 3 sets of 30 seconds")
+        suggestions.append("Exercise 4: Dumbbell Rows - 3 sets of 10 reps (if available)")
+        # Suggested diet: Maintain a balanced diet with enough calories to maintain weight.
+
+    elif 25.0 <= bmi :
+        # Suggest workouts for Overweight category
+        suggestions.append("So, this indiactes you are in the Overweight category.")
+        suggestions.append("To lose weight: Focus on cardio and maintain a calorie deficit.")
+        # Include specific workout plans for Overweight
+        
+        # High-Intensity Interval Training (HIIT)
+        suggestions.append("Week 1-2 (3 days a week): High-Intensity Interval Training (HIIT)")
+        suggestions.append("Exercise 1: Jumping Jacks - 45 seconds, Rest 15 seconds")
+        suggestions.append("Exercise 2: Burpees - 45 seconds, Rest 15 seconds")
+        suggestions.append("Exercise 3: Mountain Climbers - 45 seconds, Rest 15 seconds")
+        suggestions.append("Repeat 3 exercises for 4 sets")
+        # Suggested diet: Maintain a calorie deficit (e.g., reduce calorie intake by 500 calories/day).
+
+        # Cardio Workout
+        suggestions.append("Week 3-4 (3 days a week): Cardio Workout")
+        suggestions.append("Exercise 1: Running - 30 minutes")
+        suggestions.append("Exercise 2: Cycling - 30 minutes")
+        suggestions.append("Exercise 3: Jump Rope - 30 minutes")
+        # Suggested diet: Continue maintaining a calorie deficit.
+
+    suggestions.append("You must maintain the workout to achive your taget")
+
+    return render_template('suggestion.html', title='Suggestion',status=True, data = suggestions)
 
 if __name__ == '__main__':
     app.run(debug=True, host="0.0.0.0",port=3000)
