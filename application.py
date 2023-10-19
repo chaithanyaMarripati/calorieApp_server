@@ -57,6 +57,7 @@ def login():
             email = session.get('email')
             temp = mongo.user.find_one({'email': form.email.data}, {
                 'email', 'pwd','name'})
+            print("temp value is here", temp)
             if temp is not None and temp['email'] == form.email.data and (
                 bcrypt.checkpw(
                     form.password.data.encode("utf-8"),
@@ -825,4 +826,8 @@ def workout_suggestions():
     return render_template('suggestion.html', title='Suggestion',status=True, data = suggestions)
 
 if __name__ == '__main__':
+<<<<<<< HEAD
     app.run(debug=True, host="0.0.0.0",port=3000)
+=======
+    app.run(debug=True,port=4999)
+>>>>>>> main
