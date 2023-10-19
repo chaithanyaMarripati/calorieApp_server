@@ -196,10 +196,11 @@ Link to the implementation video of the BurnOut application:
   
   # Enhancements
 
-   1. Make the website view port adaptable - the website should look good on phone, tablet and computer.
-   2. Chatbot to guide through the application.
-   3. Share workout plans with friends via email.
-   4. Bug Fixes
+   1. Dockerise the server.
+   2. Host the MongoDb instance in cloud.
+   3. Workout suggestion feature
+   4. Added search functionality to add friends
+   5. Bug Fixes
 
    
    # Team Members
@@ -207,11 +208,10 @@ Link to the implementation video of the BurnOut application:
 <center>
   <table>
     <tr>
-        <td align="center"><a href="https://github.com/deekay2310"><img src="https://avatars.githubusercontent.com/u/29257773?v=4" width="100px;" alt=""/><br /><sub><b>Dev Kumar</b></sub></a><br /></td>
-      <td align="center"><a href="https://github.com/PrakruthiSomashekar"><img src="https://avatars.githubusercontent.com/u/62984587?v=4" width="100px;" alt=""/><br /><sub><b>Prakruthi Somashekar</b></sub></a></td>
-    <td align="center"><a href="https://github.com/radhikaraman20"><img src="https://avatars.githubusercontent.com/u/89432698?s=400&v=4" width="100px;" alt=""/><br /><sub><b>Radhika Raman</b></sub></a><br /></td>
-      <td align="center"><a href="https://github.com/RohanSinha96"><img src="https://avatars.githubusercontent.com/u/15325746?v=4" width="100px;" alt=""/><br /><sub><b>Rohan Sinha</b></sub></a><br /></td>
-      <td align="center"><a href="https://github.com/SunidhiHegde"><img src="https://avatars.githubusercontent.com/u/62884191?v=4" width="100px;" alt=""/><br /><sub><b>Sunidhi Hegde</b></sub></a><br /></td>
+      <td align="center"><a href="https://github.com/chaithanyaMarripati">Krishna Chaitanya</a></td>
+      <td align="center"><a href="https://github.com/S-B-Mukesh">S.B.Mukesh</a></td>
+      <td align="center"><a href="https://github.com/subhang51011">Sai Subhang</a></td>
+      <td align="center"><a href="https://github.com/saivikasreddy717">Sai Vikas</a></td>
     </tr>
   </table>
 </center>
