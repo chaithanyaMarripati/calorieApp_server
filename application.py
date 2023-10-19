@@ -54,17 +54,22 @@ def login():
     if not session.get('email'):
         form = LoginForm()
         if form.validate_on_submit():
+            email = session.get('email')
             temp = mongo.user.find_one({'email': form.email.data}, {
-                'email', 'pwd'})
-            print("temp value is here", temp)
+                'email', 'pwd','name'})
             if temp is not None and temp['email'] == form.email.data and (
                 bcrypt.checkpw(
                     form.password.data.encode("utf-8"),
                     temp['pwd']) ):
                 flash('You have been logged in!', 'success')
                 session['email'] = temp['email']
+                session['name'] = temp['name']
                 #session['login_type'] = form.type.data
-                return redirect(url_for('dashboard'))
+                data = mongo.profile.find_one({'email': temp['email']}, {'weight', 'height', 'target_weight'})
+                if data:
+                    return redirect(url_for('dashboard'))
+                else:
+                    return redirect(url_for('user_profile')) #render_template('user_profile.html', title = "Details")
             else:
                 flash(
                     'Login Unsuccessful. Please check username and password',
@@ -86,6 +91,20 @@ def logout():
     """
     session.clear()
     return "success"
+
+@app.route("/display_profile", methods=['GET', 'POST'])
+def display_profile():
+    """
+    user_profile() function displays the UserProfileForm (user_profile.html) template
+    route "/user_profile" will redirect to user_profile() function.
+    user_profile() called and if the form is submitted then various values are fetched and updated into the database entries
+    Input: Email, height, weight, goal, Target weight
+    Output: Value update in database and redirected to home login page
+    """
+    if session.get('email'):
+        email = session.get('email')
+        data = mongo.profile.find_one({'email': email}, {'weight', 'height', 'target_weight'})
+        return render_template('display_profile.html', title = 'Profile', data=data, status=True)
 
 
 @app.route("/register", methods=['GET', 'POST'])
@@ -169,30 +188,29 @@ def user_profile():
     if session.get('email'):
         form = UserProfileForm()
         if form.validate_on_submit():
+            email = session.get('email')
             if request.method == 'POST':
-                email = session.get('email')
                 weight = request.form.get('weight')
                 height = request.form.get('height')
                 goal = request.form.get('goal')
                 target_weight = request.form.get('target_weight')
                 temp = mongo.profile.find_one({'email': email}, {
                     'height', 'weight', 'goal', 'target_weight'})
-                print(temp)
                 if temp is not None:
                     mongo.profile.update_one({'email': email},
-                                            {'$set': {'weight': temp['weight'],
-                                                      'height': temp['height'],
-                                                      'goal': temp['goal'],
-                                                      'target_weight': temp['target_weight']}},upsert=True)
+                                            {"$set": {'weight': weight,
+                                                      'height': height,
+                                                      'goal': goal,
+                                                      'target_weight': target_weight}})
                 else:
                     mongo.profile.insert_one({'email': email,
                                              'height': height,
                                              'weight': weight,
                                              'goal': goal,
                                              'target_weight': target_weight})
-
+            data = mongo.profile.find_one({'email': email}, {'weight', 'height', 'target_weight'})
             flash(f'User Profile Updated', 'success')
-            return render_template('display_profile.html', status=True, form=form)
+            return render_template('display_profile.html',data=data, status=True, form=form)
     else:
         return redirect(url_for('login'))
     return render_template('user_profile.html', status=True, form=form)
