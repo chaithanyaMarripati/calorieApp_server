@@ -100,51 +100,53 @@ Link to the implementation video of the BurnOut application:
 # Core Functionalities of the Application
  
  ## Register
- 
-<img src=https://github.com/deekay2310/calorieApp_server/blob/main/static/img/Screen%20Shot%202021-12-04%20at%206.41.18%20PM.png>
+ ![Register](https://github.com/chaithanyaMarripati/calorieApp_server/assets/143281993/1be23588-6cdc-44d7-8603-bc969533a223)
 
  ## Login
+![Login](https://github.com/chaithanyaMarripati/calorieApp_server/assets/143281993/dc93e27f-a469-47dc-bb1b-a4c686c0e02c)
 
-<img src=https://github.com/deekay2310/calorieApp_server/blob/main/static/img/Screen%20Shot%202021-12-04%20at%206.30.27%20PM.png>
+## Dashboard
+![Dashboard](https://github.com/chaithanyaMarripati/calorieApp_server/assets/143281993/0f9b28ff-236e-4dbd-a130-0f8f2d144afa)
+
 
  ## Set User Profile
- 
-<img src=https://github.com/deekay2310/calorieApp_server/blob/main/static/img/Screen%20Shot%202021-12-04%20at%206.35.05%20PM.png>
+ ![Set user profile](https://github.com/chaithanyaMarripati/calorieApp_server/assets/143281993/04455bae-3fdf-4889-906d-efef85827c88)
 
 
  ## Enter Calories in and burnt
-<img src=https://github.com/deekay2310/calorieApp_server/blob/main/static/img/calories.png>
+ ![Enter calories in and burnt](https://github.com/chaithanyaMarripati/calorieApp_server/assets/143281993/9f219fad-7ae1-4ed3-af26-7daa9864878f)
+
+
 
  ## Chatbot
 
 <img src=https://github.com/deekay2310/calorieApp_server/blob/main/static/img/Screen%20Shot%202021-12-04%20at%206.31.54%20PM.png>
 
 
-
-
-
-
-
-
-
  ## Check History
-
-<img src=https://github.com/deekay2310/calorieApp_server/blob/main/static/img/history.png>
-
+![Check History](https://github.com/chaithanyaMarripati/calorieApp_server/assets/143281993/e48e6ced-8b03-4ce5-bcaf-a8aab18d5fc6)
 
 
-
- ## Add weight alert
- 
-<img src=https://github.com/deekay2310/calorieApp_server/blob/main/static/img/Screen%20Shot%202021-12-04%20at%206.30.48%20PM.png>
 
  ## Adding Friends
+![Adding friends](https://github.com/chaithanyaMarripati/calorieApp_server/assets/143281993/a178c9c7-c982-48df-a19e-baa93e9d4bbc)
 
-<img src=https://github.com/deekay2310/calorieApp_server/blob/main/static/img/friends.png>
 
  ## Enrolling into several programs
  
 <img src=https://github.com/deekay2310/calorieApp_server/blob/main/static/img/Screen%20Shot%202021-12-04%20at%206.32.08%20PM.png>
+
+## Suggestion page
+
+![Suggestion page](https://github.com/chaithanyaMarripati/calorieApp_server/assets/143281993/0d1961af-e164-4ca3-a0d4-24b02074a61b)
+
+## User enrollment list
+![User Enrollment list](https://github.com/chaithanyaMarripati/calorieApp_server/assets/143281993/e28a3394-29a9-417f-ba11-e084bafa9147)
+
+## More info page
+![More info page on Yoga](https://github.com/chaithanyaMarripati/calorieApp_server/assets/143281993/689cf8e6-f9e1-47de-83fb-acad83319fd9)
+
+
 
 
  # Steps for execution
@@ -185,22 +187,33 @@ Link to the implementation video of the BurnOut application:
   
   # Enhancements
 
-   1. Make the website view port adaptable - the website should look good on phone, tablet and computer.
-   2. Chatbot to guide through the application.
-   3. Share workout plans with friends via email.
-   4. Bug Fixes
+   1. New workout suggestion feature.
+   2. Dockerise the server
+   3. Host the MongoDb instance in cloud
+   4. Search function to add friends
+   5. Bug Fixes
+  
+  # Future Scope
 
+   1. Build machine learning model for personalized workout suggestion
+  2. Store user enrollment data in a new collection(new table) in MongoDb
+  3. Can implement forgot password
+  4. Email authentication
+  5. Deployment
+  6. Forgot password not working.
+  7. Colour change in dashboard
+  8. For every load, the chatbot is loading and irritating with the pop up.
+  9. Login, Register, Updating Account details - form width adjustment and buttons centering.
    
    # Team Members
    
 <center>
   <table>
     <tr>
-        <td align="center"><a href="https://github.com/deekay2310"><img src="https://avatars.githubusercontent.com/u/29257773?v=4" width="100px;" alt=""/><br /><sub><b>Dev Kumar</b></sub></a><br /></td>
-      <td align="center"><a href="https://github.com/PrakruthiSomashekar"><img src="https://avatars.githubusercontent.com/u/62984587?v=4" width="100px;" alt=""/><br /><sub><b>Prakruthi Somashekar</b></sub></a></td>
-    <td align="center"><a href="https://github.com/radhikaraman20"><img src="https://avatars.githubusercontent.com/u/89432698?s=400&v=4" width="100px;" alt=""/><br /><sub><b>Radhika Raman</b></sub></a><br /></td>
-      <td align="center"><a href="https://github.com/RohanSinha96"><img src="https://avatars.githubusercontent.com/u/15325746?v=4" width="100px;" alt=""/><br /><sub><b>Rohan Sinha</b></sub></a><br /></td>
-      <td align="center"><a href="https://github.com/SunidhiHegde"><img src="https://avatars.githubusercontent.com/u/62884191?v=4" width="100px;" alt=""/><br /><sub><b>Sunidhi Hegde</b></sub></a><br /></td>
+      <td align="center"><a href="https://github.com/chaithanyaMarripati">Krishna Chaitanya</a></td>
+      <td align="center"><a href="https://github.com/S-B-Mukesh">S.B. Mukesh</a></td>
+      <td align="center"><a href="https://github.com/subhang51011">Sai Subhang</a></td>
+      <td align="center"><a href="https://github.com/saivikasreddy717">Sai Vikas</a></td>
     </tr>
   </table>
 </center>
