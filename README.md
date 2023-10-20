@@ -208,7 +208,8 @@ Link to the implementation video of the BurnOut application:
   3. Implement forgot password feature
   4. Implement email authentication
   5. Deploy the project to make it accessible to everyone
-   
+  6. Change colours for the previous and next buttons on dashboard
+  
    # Team Members
    
 <center>
