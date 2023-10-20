@@ -1,6 +1,7 @@
 # Grading for project 2: **(https://github.com/chaithanyaMarripati/calorieApp_server)**
 |**Notes**|**Grading**|**Evidence**|
 |-----|---------|------|
+|**Total**|**81**||
 |Video|3|https://github.com/chaithanyaMarripati/calorieApp_server/blob/main/README.md|
 |Workload is spread over the whole team (one team member is often Xtimes more productive than the others but nevertheless, here is a track record that everyone is contributing a lot)|3|https://github.com/chaithanyaMarripati/calorieApp_server/pulse|
 |Number of commits|3|https://github.com/chaithanyaMarripati/calorieApp_server/graphs/contributors|
