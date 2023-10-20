@@ -1,4 +1,4 @@
-# Grading for project proj4: **[calorieApp](https://github.com/deekay2310/calorieApp_server)**
+# Grading for project 2: **(https://github.com/chaithanyaMarripati/calorieApp_server)**
 |**Notes**|**Grading**|**Evidence**|
 |-----|---------|------|
 |Video|3|https://github.com/chaithanyaMarripati/calorieApp_server/blob/main/README.md|
