@@ -202,13 +202,14 @@ Link to the implementation video of the BurnOut application:
    4. Added search functionality to add friends
    5. Bug Fixes
 
-  # Future Scope
-  1. Integrating ML model to give out personalised workout suggestions.
-  2. Store user enrollment data in a new collection(new table) in MongoDb
-  3. Implement forgot password feature
-  4. Implement email authentication
-  5. Deploy the project to make it accessible to everyone
-  6. Change colours for the previous and next buttons on dashboard
+   # Future Scope
+   1. Integrating ML model to give out personalised workout suggestions.
+   2. Store user enrollment data in a new collection(new table) in MongoDb
+   3. Implement forgot password feature
+   4. Implement email authentication
+   5. Deploy the project to make it accessible to everyone
+   6. Change colours for the previous and next buttons on dashboard
+   7. Readjust width of each page accordingly
   
    # Team Members
    
