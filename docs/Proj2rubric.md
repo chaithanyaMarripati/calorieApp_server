@@ -23,7 +23,7 @@
 |Test cases are routinely executed	|3|https://github.com/chaithanyaMarripati/calorieApp_server/blob/main/.travis.yml|
 |The files CONTRIBUTING.md lists coding standards and lots of tips on how to extend the system without screwing things up	|3|https://github.com/chaithanyaMarripati/calorieApp_server/blob/main/CONTRIBUTING.md|
 |Issues are discussed before they are closed	|3|https://github.com/chaithanyaMarripati/calorieApp_server/issues?q=is%3Aissue+is%3Aclosed|
-|Chat channel: exists	|0||
+|Chat channel: exists	|3|https://github.com/chaithanyaMarripati/calorieApp_server/issues?q=is%3Aissue+is%3Aclosed|
 |Test cases: a large proportion of the issues related to handling failing cases.	|0||
 |Evidence that the whole team is using the same tools: everyone can get to all tools and files	|3|Used VSCode and Github Desktop|
 |Evidence that the whole team is using the same tools (e.g. config files in the repo, updated by lots of different people)	|3|https://github.com/chaithanyaMarripati/calorieApp_server/blob/main/requirements.txt|
@@ -38,7 +38,7 @@
 |Is your software available as a package that can be deployed without building it?|Yes||
 |Is your software available for free?|Yes||
 |Is your source code publicly available to download, either as a downloadable bundle or via access to a source code repository?|Yes|https://github.com/chaithanyaMarripati/calorieApp_server|
-|Is your software hosted in an established, third-party repository like [GitHub](https://github.com), [BitBucket](https://bitbucket.org), [LaunchPad](https://launchpad.net) or [SourceForge](https://sourceforge.net)?|Yes|https://github.com/deekay2310/calorieApp_server|
+|Is your software hosted in an established, third-party repository like [GitHub](https://github.com), [BitBucket](https://bitbucket.org), [LaunchPad](https://launchpad.net) or [SourceForge](https://sourceforge.net)?|Yes|https://github.com/chaithanyaMarripati/calorieApp_server|
 |Is your documentation clearly available on your website or within your software?|Yes|https://github.com/chaithanyaMarripati/calorieApp_server|
 |Does your documentation include a "quick start" guide, that provides a short overview of how to use your software with some basic examples of use?|Yes|https://github.com/chaithanyaMarripati/calorieApp_server/blob/main/README.md|
 |If you provide more extensive documentation, does this provide clear, step-by-step instructions on how to deploy and use your software?|Yes|https://github.com/chaithanyaMarripati/calorieApp_server/blob/main/README.md#steps-for-execution|
