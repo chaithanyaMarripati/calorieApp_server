@@ -1,7 +1,7 @@
 # Grading for project 2: **[Burnout](https://github.com/chaithanyaMarripati/calorieApp_server)**
 |**Notes**|**Grading**|**Evidence**|
 |-----|---------|------|
-|Total |81||
+|Total |86||
 |Video|3|https://github.com/chaithanyaMarripati/calorieApp_server/blob/main/README.md|
 |Workload is spread over the whole team (one team member is often Xtimes more productive than the others but nevertheless, here is a track record that everyone is contributing a lot)|3|https://github.com/chaithanyaMarripati/calorieApp_server/pulse|
 |Number of commits|3|https://github.com/chaithanyaMarripati/calorieApp_server/graphs/contributors|
@@ -13,7 +13,7 @@
 |Docs: what: point descriptions of each class/function (in isolation)|3|https://github.com/chaithanyaMarripati/calorieApp_server/blob/main/docs/function_description.md|
 |Docs: how: for common use cases X,Y,Z mini-tutorials showing worked examples on how to do X,Y,Z	|3|https://github.com/chaithanyaMarripati/calorieApp_server/blob/main/README.md|
 |Docs: why: docs tell a story, motivate the whole thing, deliver a punchline that makes you want to rush out and use the thing	|3|https://github.com/chaithanyaMarripati/calorieApp_server/blob/main/README.md|
-|Docs: short video, animated, hosted on your repo. That convinces people why they want to work on your code.|0||
+|Docs: short video, animated, hosted on your repo. That convinces people why they want to work on your code.|2|https://app.colossyan.com/share-draft/28dedef4-e2a1-4f17-b9f0-c22e2196a467|
 |Use of version control tools	|3|Used Github as the version control tool|
 |Use of style checkers	|3|https://github.com/chaithanyaMarripati/calorieApp_server/blob/main/.github/workflows/style_checker.yml|
 |Use of code formatters.	|3|https://github.com/chaithanyaMarripati/calorieApp_server/blob/main/.github/workflows/code_formatter.yml|
