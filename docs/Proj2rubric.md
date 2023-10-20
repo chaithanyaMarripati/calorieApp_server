@@ -1,4 +1,4 @@
-# Grading for project 2: **(https://github.com/chaithanyaMarripati/calorieApp_server)**
+# Grading for project 2: **[Burnout](https://github.com/chaithanyaMarripati/calorieApp_server)**
 |**Notes**|**Grading**|**Evidence**|
 |-----|---------|------|
 |Total |81||
