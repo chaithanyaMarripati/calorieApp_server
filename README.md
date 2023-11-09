@@ -168,11 +168,11 @@ Link to the implementation video of the BurnOut application:
  Step 2: 
   Git Clone the Repository 
   
-    git clone https://github.com/deekay2310/calorieApp_server.git
+    git clone https://github.com/chaithanyaMarripati/calorieApp_server
     
   (OR) Download the .zip file on your local machine
   
-    https://github.com/deekay2310/calorieApp_server.git
+    https://github.com/chaithanyaMarripati/calorieApp_server
   
  Step 3:
    Build the docker image locally.
